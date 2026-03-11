@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TrainingOS — AI Workout Planner</title>
+  <meta name="description" content="Transform any fitness video into a structured, trackable workout plan. AI-powered workout generation, progress tracking, and coaching.">
+  <meta name="apple-itunes-app" content="app-id=6759537618">
+  <link rel="canonical" href="https://trainingos.app">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif;
+      background: #0A0A0A;
+      color: #F5F5F0;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a { color: #C9B99A; text-decoration: none; transition: opacity 0.15s; }
+    a:hover { opacity: 0.8; }
+
+    /* Nav */
+    .nav {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 24px 28px;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      border-bottom: 1px solid #1F1F1F;
+    }
+    .nav-logo {
+      font-size: 17px;
+      font-weight: 600;
+      color: #F5F5F0;
+      letter-spacing: -0.2px;
+    }
+    .nav-logo span { color: #C9B99A; font-weight: 700; }
+    .nav-links { display: flex; gap: 24px; margin-left: auto; }
+    .nav-links a { font-size: 13px; color: #8A8A8A; font-weight: 500; letter-spacing: 0.3px; text-transform: uppercase; }
+    .nav-links a:hover { color: #C9B99A; }
+
+    /* Hero */
+    .hero {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 80px 28px 60px;
+      text-align: center;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(201,185,154,0.08);
+      border: 1px solid rgba(201,185,154,0.15);
+      border-radius: 9999px;
+      padding: 6px 18px;
+      font-size: 11px;
+      color: #C9B99A;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 32px;
+    }
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 200;
+      letter-spacing: -1px;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .hero h1 strong { font-weight: 700; color: #C9B99A; }
+    .hero .tagline {
+      font-size: 17px;
+      color: #8A8A8A;
+      max-width: 520px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #C9B99A;
+      color: #0A0A0A;
+      padding: 16px 36px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: -0.1px;
+      transition: all 0.15s;
+      box-shadow: 0 4px 12px rgba(201,185,154,0.3);
+    }
+    .cta-btn:hover { opacity: 0.9; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(201,185,154,0.35); color: #0A0A0A; }
+    .cta-btn svg { width: 18px; height: 18px; }
+
+    /* Features */
+    .features {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 60px 28px;
+    }
+    .section-label {
+      font-size: 11px;
+      color: #5E5E5E;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 32px;
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .feature-card {
+      background: #141414;
+      border: 1px solid #1F1F1F;
+      border-radius: 16px;
+      padding: 28px;
+      transition: border-color 0.25s;
+    }
+    .feature-card:hover { border-color: #2A2520; }
+    .feature-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      font-size: 18px;
+    }
+    .feature-card h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #F5F5F0;
+      margin-bottom: 8px;
+      letter-spacing: -0.2px;
+    }
+    .feature-card p {
+      font-size: 14px;
+      color: #7A7A7A;
+      line-height: 1.6;
+    }
+
+    /* Subscription */
+    .subscription {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 60px 28px;
+    }
+    .sub-card {
+      background: #141414;
+      border: 1px solid #1F1F1F;
+      border-radius: 16px;
+      padding: 36px;
+    }
+    .sub-card h2 {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: -0.2px;
+      margin-bottom: 8px;
+    }
+    .sub-card h2 span { color: #C9B99A; }
+    .sub-card .sub-desc {
+      font-size: 14px;
+      color: #8A8A8A;
+      margin-bottom: 24px;
+    }
+    .plan-row {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .plan {
+      flex: 1;
+      background: #1A1A1A;
+      border: 1px solid #1F1F1F;
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .plan.featured { border-color: rgba(201,185,154,0.3); background: rgba(201,185,154,0.04); }
+    .plan-name { font-size: 13px; color: #8A8A8A; font-weight: 500; margin-bottom: 4px; }
+    .plan-price { font-size: 24px; font-weight: 700; letter-spacing: -0.5px; }
+    .plan-price span { font-size: 14px; font-weight: 400; color: #5E5E5E; }
+    .plan-note { font-size: 12px; color: #C9B99A; margin-top: 4px; }
+    .sub-fine {
+      font-size: 13px;
+      color: #5E5E5E;
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    .footer {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 28px 60px;
+      border-top: 1px solid #1F1F1F;
+    }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 16px;
+    }
+    .footer-links a { font-size: 13px; color: #5E5E5E; font-weight: 500; }
+    .footer-links a:hover { color: #C9B99A; }
+    .copyright { font-size: 12px; color: #3A3A3A; }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 36px; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .plan-row { flex-direction: column; }
+      .nav-links { gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="/" class="nav-logo">Training<span>OS</span></a>
+    <div class="nav-links">
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+      <a href="/support">Support</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="badge">AI-Powered Fitness</div>
+    <h1>Your workouts,<br><strong>intelligently planned</strong></h1>
+    <p class="tagline">Import from YouTube, build smart programs, track your progress, and get coached toward your goals — all in one app.</p>
+    <a href="https://apps.apple.com/app/id6759537618" class="cta-btn">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+      Download on the App Store
+    </a>
+  </section>
+
+  <section class="features">
+    <div class="section-label">• Features</div>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon" style="background: rgba(125,184,232,0.1);">&#x1F3AC;</div>
+        <h3>Import from YouTube</h3>
+        <p>Paste any fitness video URL and AI extracts exercises, sets, reps, and rest periods into a structured workout.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background: rgba(201,185,154,0.1);">&#x26A1;</div>
+        <h3>Smart Builder</h3>
+        <p>Select your target muscles, equipment, time, and intensity. AI generates a personalized workout in seconds.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background: rgba(107,155,122,0.1);">&#x1F4CA;</div>
+        <h3>Track Everything</h3>
+        <p>Log sets, reps, and weight in real-time. View your progress calendar, personal records, and volume trends.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background: rgba(168,125,232,0.1);">&#x1F916;</div>
+        <h3>AI Coach</h3>
+        <p>Chat with your AI training coach for exercise tips, form advice, and workout modifications.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="subscription">
+    <div class="section-label">• Subscription Information</div>
+    <div class="sub-card">
+      <h2>Training<span>OS</span> Pro</h2>
+      <p class="sub-desc">Auto-renewable subscription. Unlock unlimited AI generations, YouTube import, Smart Builder, AI Coach, and more.</p>
+      <div class="plan-row">
+        <div class="plan">
+          <div class="plan-name">Monthly</div>
+          <div class="plan-price">$5.99<span>/mo</span></div>
+        </div>
+        <div class="plan featured">
+          <div class="plan-name">Yearly</div>
+          <div class="plan-price">$49.99<span>/yr</span></div>
+          <div class="plan-note">7-day free trial</div>
+        </div>
+      </div>
+      <p class="sub-fine">Payment is charged to your Apple ID account at confirmation of purchase. Subscriptions automatically renew unless cancelled at least 24 hours before the end of the current period. You can manage and cancel subscriptions in your device's Settings &gt; [Your Name] &gt; Subscriptions.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms of Service</a>
+      <a href="/support">Support</a>
+      <a href="mailto:support@trainingos.app">Contact</a>
+    </div>
+    <p class="copyright">&copy; 2026 TrainingOS. All rights reserved.</p>
+  </footer>
+</body>
+</html>
