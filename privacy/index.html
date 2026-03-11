@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — TrainingOS</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif;
+      background: #0A0A0A;
+      color: #F5F5F0;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: #C9B99A; text-decoration: none; }
+    a:hover { opacity: 0.8; }
+    .nav {
+      max-width: 800px; margin: 0 auto; padding: 24px 28px;
+      display: flex; align-items: center; gap: 28px;
+      border-bottom: 1px solid #1F1F1F;
+    }
+    .nav-logo { font-size: 17px; font-weight: 600; color: #F5F5F0; letter-spacing: -0.2px; }
+    .nav-logo span { color: #C9B99A; font-weight: 700; }
+    .nav-links { display: flex; gap: 24px; margin-left: auto; }
+    .nav-links a { font-size: 13px; color: #8A8A8A; font-weight: 500; letter-spacing: 0.3px; text-transform: uppercase; }
+    .nav-links a:hover { color: #C9B99A; }
+    .content { max-width: 800px; margin: 0 auto; padding: 60px 28px 100px; }
+    .badge {
+      display: inline-block; background: rgba(201,185,154,0.08); border: 1px solid rgba(201,185,154,0.15);
+      border-radius: 9999px; padding: 6px 18px; font-size: 11px; color: #C9B99A;
+      letter-spacing: 0.8px; text-transform: uppercase; font-weight: 600; margin-bottom: 24px;
+    }
+    h1 { font-size: 36px; font-weight: 200; letter-spacing: -0.5px; margin-bottom: 8px; }
+    .subtitle { color: #5E5E5E; font-size: 13px; margin-bottom: 48px; }
+    h2 { font-size: 17px; font-weight: 600; color: #C9B99A; margin-top: 40px; margin-bottom: 16px; letter-spacing: -0.2px; }
+    p, li { font-size: 15px; color: #8A8A8A; margin-bottom: 12px; line-height: 1.7; }
+    ul { padding-left: 20px; margin-bottom: 16px; }
+    li { margin-bottom: 8px; }
+    strong { color: #F5F5F0; font-weight: 600; }
+    .divider { height: 1px; background: #1F1F1F; margin: 48px 0; }
+    .footer { max-width: 800px; margin: 0 auto; padding: 0 28px 60px; }
+    .footer-links { display: flex; gap: 24px; margin-bottom: 16px; }
+    .footer-links a { font-size: 13px; color: #5E5E5E; font-weight: 500; }
+    .copyright { font-size: 12px; color: #3A3A3A; }
+    @media (max-width: 600px) { h1 { font-size: 28px; } }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="/" class="nav-logo">Training<span>OS</span></a>
+    <div class="nav-links">
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+      <a href="/support">Support</a>
+    </div>
+  </nav>
+
+  <div class="content">
+    <div class="badge">Legal</div>
+    <h1>Privacy Policy</h1>
+    <p class="subtitle">Effective Date: March 4, 2026 &middot; Last Updated: March 4, 2026</p>
+
+    <p>TrainingOS ("we", "us", "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and share information when you use our mobile application.</p>
+
+    <h2>1. Information We Collect</h2>
+    <p><strong>Account Information:</strong> When you sign up, we collect your email address, display name, and authentication credentials via Supabase Auth (email/password or Apple Sign-In).</p>
+    <p><strong>Workout Data:</strong> Exercises, sets, reps, weights, workout history, personal records, and progress metrics you log in the app.</p>
+    <p><strong>Wellness Data:</strong> Protocol tracking information, supplement logs, and wellness check-in data you choose to enter.</p>
+    <p><strong>AI Interaction Data:</strong> Prompts you send to AI features (Smart Builder, YouTube Import, AI Coach) and the responses generated.</p>
+    <p><strong>Device Information:</strong> Device type, operating system version, and app version for crash reporting and compatibility.</p>
+    <p><strong>Subscription Data:</strong> Purchase status and subscription tier, managed through Apple's App Store and RevenueCat.</p>
+
+    <h2>2. How We Use Your Information</h2>
+    <ul>
+      <li>To provide and personalize the TrainingOS service</li>
+      <li>To generate AI-powered workouts, coaching responses, and video imports</li>
+      <li>To track your fitness progress, personal records, and streaks</li>
+      <li>To manage your subscription and in-app purchases</li>
+      <li>To send important service updates (not marketing)</li>
+      <li>To improve app performance and fix bugs</li>
+    </ul>
+
+    <h2>3. Third-Party Services</h2>
+    <p>We use the following third-party services:</p>
+    <ul>
+      <li><strong>Supabase:</strong> Authentication and database hosting (data stored securely with row-level security)</li>
+      <li><strong>Google Gemini AI:</strong> Workout generation, video parsing, and AI coaching (prompts are sent to Google's API; we do not store AI conversation logs beyond your session)</li>
+      <li><strong>RevenueCat:</strong> Subscription management and purchase validation</li>
+      <li><strong>Apple App Store:</strong> Payment processing for subscriptions</li>
+      <li><strong>Expo/EAS:</strong> App updates and crash reporting</li>
+    </ul>
+    <p>We do <strong>not</strong> sell your personal data to any third party.</p>
+
+    <h2>4. Data Storage &amp; Security</h2>
+    <p>Your data is stored in Supabase's cloud infrastructure with row-level security policies ensuring you can only access your own data. All data is transmitted over HTTPS. We use industry-standard security measures to protect your information.</p>
+
+    <h2>5. YouTube Content</h2>
+    <p>When you use the YouTube Import feature, we send the video URL to our AI service to extract workout structure. We do not download, store, or redistribute any YouTube video content. The feature is subject to <a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener">YouTube's Terms of Service</a>.</p>
+
+    <h2>6. Your Rights</h2>
+    <p>You have the right to:</p>
+    <ul>
+      <li>Access your personal data</li>
+      <li>Request correction of inaccurate data</li>
+      <li>Request deletion of your account and associated data</li>
+      <li>Export your workout data</li>
+      <li>Opt out of non-essential data collection</li>
+    </ul>
+    <p>To exercise these rights, contact us at <a href="mailto:support@trainingos.app">support@trainingos.app</a>.</p>
+
+    <h2>7. Data Retention</h2>
+    <p>We retain your data for as long as your account is active. When you delete your account, we remove all personal data within 30 days. Anonymized, aggregated data may be retained for analytics purposes.</p>
+
+    <h2>8. Children's Privacy</h2>
+    <p>TrainingOS is not intended for children under 13. We do not knowingly collect personal information from children. If you believe a child has provided us with personal data, please contact us.</p>
+
+    <h2>9. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. Material changes will be communicated through the app. Continued use after changes constitutes acceptance.</p>
+
+    <h2>10. Contact Us</h2>
+    <p>If you have questions about this Privacy Policy:</p>
+    <p>Email: <a href="mailto:support@trainingos.app">support@trainingos.app</a></p>
+
+    <div class="divider"></div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms of Service</a>
+      <a href="/support">Support</a>
+      <a href="mailto:support@trainingos.app">Contact</a>
+    </div>
+    <p class="copyright">&copy; 2026 TrainingOS. All rights reserved.</p>
+  </footer>
+</body>
+</html>
